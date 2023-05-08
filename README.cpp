@@ -11,7 +11,7 @@ public:
    {
     this->a = a;
     this->b = b;
-    
+
    }
 };
 
@@ -21,9 +21,10 @@ ParOrd & operator + (const ParOrd &p1, const ParOrd &p2)
 
 }
 
-ParOrd & operator * (const ParOrd &p1, const ParOrd &p2)
+ostream& operator << (ostream &o,const ParOrd &p)
+
 {
-    return *( new ParOrd (p1.a * p2.a,p1.b * p2.b));
+    o << "(" << p.a << ", " << p.b << ")";
 
 }
 
@@ -36,17 +37,13 @@ int main()
     ParOrd B(150, 175);
     A.contaObj++;
     ParOrd C = A + B;
-    A.contaObj++;
-    ParOrd D = A * B;
-    A.contaObj++;  
+    A.contaObj++; 
 
-    cout<<"c ="<<C.a<<","<<C.b<<"\n";
-    cout<<"Contar Cuantos Obejetos totales: "<< B.contaObj<<endl;
-
+    cout<<"A="<<A<<"\n";
+    cout<<"B="<<B<<"\n";
+    cout<<"C="<<C<<"\n";
     
-    cout<<"c ="<<D.a<<","<<D.b<<"\n";
-    cout<<"Contar Cuantos Obejetos totales: "<< C.contaObj<<endl;
-
+    cout<<"c ="<<C.a<<","<<C.b<<"\n";
+    cout<<"Contar Cuantos Obejetos totales"<< B.contaObj<<endl;
     return 0;
-
 }
