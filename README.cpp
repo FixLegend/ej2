@@ -1,49 +1,35 @@
 #include <iostream>
-#include <string>
-
 using namespace std;
-class ParOrd {
-public:
-   double a , b;
-   static int contaObj;
 
-   ParOrd(const double a,const double b)
-   {
-    this->a = a;
-    this->b = b;
+class Vehiculo {
+   protected:
+      int ruedas;
+      int ano;
+   public:
+     Vehiculo(int n_ano,int n_ruedas){
+       ano = n_ano;
+       ruedas = n_ruedas;
+     }
+     void info() {
+        cout << "este vehiculo tiene " << ruedas << " ruedas"<< endl;
+     }
+ };
+ class Automovil : public Vehiculo{
+   private:
+       int puertas;
+   public:
+        Automovil (int n_ruedas, int n_puertas , int n_ano) : Vehiculo (n_ruedas , n_ano){
+        puertas = n_puertas;
+       }
+       void info() {
+          Vehiculo::info();
+          cout << "el automovil tiene " << puertas << " puertas"<< endl;
+          cout << "este vehiculo es del ano " << ano << endl;
+    }
+ };
 
-   }
-};
-
-ParOrd & operator + (const ParOrd &p1, const ParOrd &p2)
-{
-    return *( new ParOrd (p1.a + p2.a,p1.b + p2.b));
-
-}
-
-ostream& operator << (ostream &o,const ParOrd &p)
-
-{
-    o << "(" << p.a << ", " << p.b << ")";
-
-}
-
-int ParOrd::contaObj=0;
-
-int main()
-{
-    ParOrd A(50, 75);
-    A.contaObj++;
-    ParOrd B(150, 175);
-    A.contaObj++;
-    ParOrd C = A + B;
-    A.contaObj++; 
-
-    cout<<"A="<<A<<"\n";
-    cout<<"B="<<B<<"\n";
-    cout<<"C="<<C<<"\n";
-    
-    cout<<"c ="<<C.a<<","<<C.b<<"\n";
-    cout<<"Contar Cuantos Obejetos totales"<< B.contaObj<<endl;
+int main() {
+    Automovil a(2009, 2, 4);
+    a.info();
     return 0;
 }
