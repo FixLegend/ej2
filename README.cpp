@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+// ¯\_(ツ)_/¯
 
 class Vehiculo {
    protected:
@@ -14,7 +15,7 @@ class Vehiculo {
         cout << "este vehiculo tiene " << ruedas << " ruedas"<< endl;
      }
  };
- class Automovil : public Vehiculo{
+ class Automovil : public Vehiculo {
    private:
        int puertas;
    public:
