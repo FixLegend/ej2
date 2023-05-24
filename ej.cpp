@@ -1,3 +1,9 @@
+//███╗░░░███╗░█████╗░██╗░░░██╗
+//████╗░████║██╔══██╗██║░░░██║
+//██╔████╔██║███████║██║░░░██║
+//██║╚██╔╝██║██╔══██║██║░░░██║
+//██║░╚═╝░██║██║░░██║╚██████╔╝
+//╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░
 %2. Halla el volumen del sólido de revolución generado por 
 %la rotación, alrededor del eje X, de la región
 %situada en el primer cuadrante que está limitada por la izquierda
