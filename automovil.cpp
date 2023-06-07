@@ -1,36 +1,28 @@
 #include <iostream>
-using namespace std;
-// ¯\_(ツ)_/¯
+#include <string>
 
-class Vehiculo {
-   protected:
-      int ruedas;
-      int ano;
-   public:
-     Vehiculo(int n_ano,int n_ruedas){
-       ano = n_ano;
-       ruedas = n_ruedas;
-     }
-     void info() {
-        cout << "este vehiculo tiene " << ruedas << " ruedas"<< endl;
-     }
- };
- class Automovil : public Vehiculo {
-   private:
-       int puertas;
-   public:
-        Automovil (int n_ruedas, int n_puertas , int n_ano) : Vehiculo (n_ruedas , n_ano){
-        puertas = n_puertas;
-       }
-       void info() {
-          Vehiculo::info();
-          cout << "el automovil tiene " << puertas << " puertas"<< endl;
-          cout << "este vehiculo es del ano " << ano << endl;
-    }
- };
+using namespace std;
+
+template<class T> T multi(T &x, T &y)
+{
+    return x*y;
+}
+class Vector 
+{
+public : float x , y;
+bool operator>(Vector v)
+ {
+    return Vector(x.x*y.x,x.y*y.y);
+ }
+};
 
 int main() {
-    Automovil a(2009, 2, 4);
-    a.info();
+   
+Vector v1 = {2, 3};
+Vector v2 = {1, 5};
+Vector result = v1*v2;
+
+    cout << "el resultado es : "<< result <<endl;
+
     return 0;
 }
